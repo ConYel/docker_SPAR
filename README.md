@@ -12,9 +12,7 @@ Create a new dir
 * `mkdir my_docker_cont`
 * `cd my_docker_cont`
 * `git clone https://github.com/ConYel/docker_SPAR.git`
-* `cd docker_SPAR`
-* `docker build --tag spar_cont:v1  .`
-* `cd ..`
+* `docker build --tag spar_cont:v1  ./docker_SPAR`
 * `mkdir my_data # make another dir in which you will put your data, genome files and mount it on the container`
 
 ### Optional steps
@@ -30,4 +28,4 @@ change the directories of the genome reference pointing to the mounted dir ~ "my
 
 
 
-Corrections/suggestions are welcome, please make a new branch and then a pull request!
+Corrections/suggestions are welcome, please make a new branch and then a pull request
