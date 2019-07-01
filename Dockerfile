@@ -66,7 +66,7 @@ RUN apt-get clean && apt-get update && apt-get install -y r-base \
 	&& R -e 'install.packages(c("ggplot2","dplyr","plyr","reshape2","RColorBrewer"))'
 
 # install SPAR
-RUN git clone https://github.com/ConYel/spar_pipeline.git && git clone https://bitbucket.org/wanglab-upenn/spar_pipeline.git
+RUN git clone https://github.com/ConYel/spar_pipeline.git && git clone https://github.com/ConYel/spar_prepare.git
 
 # fix an issue with libraries openssl
 RUN ln -sf /root/miniconda/pkgs/openssl-1.1.1b-h7b6447c_1/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0 \
