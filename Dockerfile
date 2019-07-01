@@ -1,6 +1,8 @@
 #Use an official Ubuntu runtime as a parent image
 FROM ubuntu:latest
 
+#MAINTAINER ConYel <https://github.com/ConYel>
+
 # Set the working directory to /home
 WORKDIR /home
 
