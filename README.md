@@ -20,7 +20,7 @@ Create a new dir
   2. Prepare STAR index
   3. Prepare conservation tracks
 (info about optional steps can be found in SPAR_pipeline)
-## Run the container plus mount the directory 
+## Run the container and mount the directory 
 * `docker run --name spar --rm -ti --mount type=bind,source="$PWD/my_data",target=/home/my_data spar_cont`
 
 The config.docker.hg38.sh can be used to run the workflow but you need to 
