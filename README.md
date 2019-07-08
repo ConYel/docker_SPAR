@@ -14,17 +14,25 @@ Create a new dir
 * `git clone https://github.com/ConYel/docker_SPAR.git`
 * `docker build --tag spar_cont:v1  ./docker_SPAR`
 * `mkdir -vp my_data/genome  my_data/samples  my_data/SPAR_res # main directory with data and ref gen files which will be mounted on the container`
-* 
+
 ### Next steps
-  1. Prepare reference genome
-  2. Prepare STAR index
-  3. Prepare conservation tracks
-(info about optional steps can be found in SPAR_pipeline)
+####  1. Prepare reference genome
+`cd my_data/genome`
+`wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa`
+`chmod a+x twoBitToFa`
+`wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit`
+`./twoBitToFa hg19.2bit hg19.fa`
+####  2. Prepare conservation tracks
+`wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/phastCons100way/hg38.phastCons100way.bw`
+####  3. Prepare STAR index
+`mkdir -p hg38/star`
+`STAR --runMode genomeGenerate --genomeDir hg19/star --genomeFastaFiles hg38.fa --runThreadN 4`
+
 ## Run the container and mount the directory 
 * `docker run --name spar --rm -ti --mount type=bind,source="$PWD/my_data",target=/home/my_data spar_cont`
 
-The config.docker.hg38.sh can be used to run the workflow but you need to 
-change the directories of the genome reference pointing to the mounted dir ~ "my_data"
+The config.docker.hg38.sh can be used to run the workflow just be sure that you have given
+the same names of the virtual docker file ~ "my_data"
 
 
 
