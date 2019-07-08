@@ -15,7 +15,7 @@ Create a new dir
 * `docker build --tag spar_cont:v1  ./docker_SPAR`
 * `mkdir my_data # make another dir in which you will put your data, genome files and mount it on the container`
 
-### Optional steps
+### Next steps
   1. Prepare reference genome
   2. Prepare STAR index
   3. Prepare conservation tracks
