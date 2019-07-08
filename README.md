@@ -17,16 +17,16 @@ Create a new dir
 
 ### Next steps
 ####  1. Prepare reference genome
-`cd my_data/genome`
-`wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa`
-`chmod a+x twoBitToFa`
-`wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit`
-`./twoBitToFa hg19.2bit hg19.fa`
+* `cd my_data/genome`
+* `wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa`
+* `chmod a+x twoBitToFa`
+* `wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit`
+* `./twoBitToFa hg19.2bit hg19.fa`
 ####  2. Prepare conservation tracks
-`wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/phastCons100way/hg38.phastCons100way.bw`
+* `wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/phastCons100way/hg38.phastCons100way.bw`
 ####  3. Prepare STAR index
-`mkdir -p hg38/star`
-`STAR --runMode genomeGenerate --genomeDir hg19/star --genomeFastaFiles hg38.fa --runThreadN 4`
+* `mkdir -p hg38/star`
+* `STAR --runMode genomeGenerate --genomeDir hg38/star --genomeFastaFiles hg38.fa --runThreadN 4`
 
 ## Run the container and mount the directory 
 * `docker run --name spar --rm -ti --mount type=bind,source="$PWD/my_data",target=/home/my_data spar_cont`
