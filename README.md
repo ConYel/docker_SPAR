@@ -13,8 +13,8 @@ Create a new dir
 * `cd my_docker_cont`
 * `git clone https://github.com/ConYel/docker_SPAR.git`
 * `docker build --tag spar_cont:v1  ./docker_SPAR`
-* `mkdir my_data # make another dir in which you will put your data, genome files and mount it on the container`
-
+* `mkdir -vp my_data/genome  my_data/samples  my_data/SPAR_res # main directory with data and ref gen files which will be mounted on the container`
+* 
 ### Next steps
   1. Prepare reference genome
   2. Prepare STAR index
