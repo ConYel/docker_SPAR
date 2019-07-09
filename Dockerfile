@@ -59,7 +59,10 @@ RUN conda update conda \
 	&& conda install bedtools samtools star cutadapt ucsc-bedgraphtobigwig ucsc-bedtobigbed ucsc-bigwigtobedgraph ucsc-bigwigaverageoverbed  -y
 
 # install SPAR
-RUN git clone https://github.com/ConYel/spar_pipeline.git && git clone https://github.com/ConYel/spar_prepare.git
+RUN git clone https://github.com/ConYel/spar_pipeline.git \
+&& git clone https://github.com/ConYel/spar_prepare.git \
+&& chmod -R 700 spar_pipeline/* \
+&& chmod -R 700 spar_prepare/* \
 
 # fix an issue with libraries openssl
 RUN ln -sf /root/miniconda/pkgs/openssl-1.1.1b-h7b6447c_1/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0 \
