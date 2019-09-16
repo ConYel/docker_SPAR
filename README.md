@@ -21,7 +21,7 @@ Create a new dir
 * `wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa`
 * `chmod a+x twoBitToFa`
 * `wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit`
-* `./twoBitToFa hg19.2bit hg19.fa`
+* `./twoBitToFa hg38.2bit hg38.fa`
 ####  2. Prepare conservation tracks
 * `wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/phastCons100way/hg38.phastCons100way.bw`
 ####  3. Prepare STAR index
@@ -29,10 +29,10 @@ Create a new dir
 * `STAR --runMode genomeGenerate --genomeDir hg38/star --genomeFastaFiles hg38.fa --runThreadN 4`
 
 ## Run the container and mount the directory 
-* `docker run --name spar --rm -ti --mount type=bind,source="$PWD/my_data",target=/home/my_data spar_cont`
+* `docker run --name spar --rm -ti --mount -v "$PWD/my_data":/home/my_data spar_cont`
 
-The config.docker.hg38.sh can be used to run the workflow just be sure that you have given
-the same names of the virtual docker file ~ "my_data"
+The config.docker.hg38.sh can be used to run the workflow please make sure that you have given
+the same names of the virtual docker folder ~ "my_data"
 
 
 
