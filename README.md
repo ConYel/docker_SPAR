@@ -29,7 +29,7 @@ Create a new dir
 * `STAR --runMode genomeGenerate --genomeDir hg38/star --genomeFastaFiles hg38.fa --runThreadN 4`
 
 ## Run the container and mount the directory 
-* `docker run --name spar --rm -ti --mount -v "$PWD/my_data":/home/my_data spar_cont`
+* `docker run --name spar --rm -ti -v "$PWD/my_data":/home/my_data spar_cont`
 
 The config.docker.hg38.sh can be used to run the workflow please make sure that you have given
 the same names of the virtual docker folder ~ "my_data"
