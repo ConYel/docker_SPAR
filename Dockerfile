@@ -65,9 +65,8 @@ RUN git clone https://github.com/ConYel/spar_pipeline.git \
 && chmod -R 700 spar_prepare/* 
 
 # fix an issue with libraries openssl
-RUN ln -sf /root/miniconda/pkgs/openssl-1.1.1c-h7b6447c_1/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0 \
-	&& ln -sf /root/miniconda/pkgs/openssl-1.1.1c-h7b6447c_1/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.0
-
+RUN ln -sf /root/miniconda/pkgs/openssl-1.1.1d-h7b6447c_4/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.0 \
+	&& ln -sf /root/miniconda/pkgs/openssl-1.1.1d-h7b6447c_4/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.0
 ### RUN ["/bin/bash", "-c", "source ~/.bashrc && conda update conda"]
 #RUN ["/bin/bash", "-c", "source ~/.bashrc ; conda install -c r r -y"]
 #RUN conda install -c r r -y
